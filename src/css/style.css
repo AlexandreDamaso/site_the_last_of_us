@@ -1,0 +1,97 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+main::after{
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,1) 100%);
+    z-index: -1;
+}
+.conteudo {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.informacoes .logo{
+    width: 350px;
+    filter: invert(1);
+    margin-bottom: 80px;
+}
+.informacoes .descricao {
+    width: 50%;
+    font-size: 24px;
+    color: #FFFFFF;
+    line-height: 30px;
+}
+.botoes-carrossel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.botoes-carrossel .botao {
+    background-color: #FFFFFF;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #FFFFFF;
+}
+.botoes-carrossel .botao.selecionado {
+    background-color: #1D8346;
+}
+.rede-sociais {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rede-sociais .icone {
+    width: 30px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+}
+.rede-sociais .icone:hover {
+    transform: scale(1.2);
+}
+.rede-sociais ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.carrossel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.carrossel .imagens {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+.carrossel .imagens.ativa {
+    display: block;
+}
+@keyframes mudarImagem {
+    from {
+        opacity: 0.85;
+    }
+    to {
+        opacity: 1;
+    }
+}
